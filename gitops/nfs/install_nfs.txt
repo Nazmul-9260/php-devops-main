@@ -22,6 +22,10 @@ sudo systemctl restart nfs-kernel-server
 sudo apt update
 sudo apt install nfs-common
 
+####
+sudo mount -t nfs 192.168.43.73:/srv/nfs/kubedata /mnt/kubedata
+vim /etc/fstab
+192.168.43.73:/srv/nfs/kubedata /mnt/kubedata nfs defaults 0 0
 
 sudo systemctl enable nfs-client.target
 sudo systemctl start nfs-client.target
@@ -30,3 +34,5 @@ sudo systemctl start nfs-client.target
 systemctl status nfs-client.target
 
 showmount -e 192.168.43.73
+
+###########
