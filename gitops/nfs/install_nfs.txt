@@ -20,3 +20,12 @@ sudo systemctl restart nfs-kernel-server
 -----------------------------------------
 sudo apt update
 sudo apt install nfs-common
+
+
+sudo systemctl enable nfs-client.target
+sudo systemctl start nfs-client.target
+
+# Check status
+systemctl status nfs-client.target
+
+showmount -e 192.168.43.73
